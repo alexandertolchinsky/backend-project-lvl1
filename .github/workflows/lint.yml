@@ -3,5 +3,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - run: echo Makefile
+    - run: cat Makefile
       working-directory: /
