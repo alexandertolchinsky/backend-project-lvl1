@@ -1,5 +1,5 @@
 on: push
 jobs:
-  steps:
-    - name: Run linter    
-      run: make lint
+  build:
+    steps:
+    - run: make lint
