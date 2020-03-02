@@ -50,3 +50,12 @@ export const getGCD = (firstNumber, secondNumber) => {
   }
   return a + b;
 };
+
+export const getProgression = () => {
+  const randomNumber = getRandomNumber();
+  const result = [randomNumber];
+  for (let i = 1; i <= 10; i += 1) {
+    result.push(randomNumber + i);
+  }
+  return result;
+};
