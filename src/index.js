@@ -37,3 +37,16 @@ export const showResult = (correctAnswerCount, name) => {
 };
 
 export const getRandomNumber = () => Math.floor(Math.random() * 100);
+
+export const getGCD = (firstNumber, secondNumber) => {
+  let a = firstNumber;
+  let b = secondNumber;
+  while (a > 0 && b > 0) {
+    if (a > b) {
+      a %= b;
+    } else {
+      b %= a;
+    }
+  }
+  return a + b;
+};
