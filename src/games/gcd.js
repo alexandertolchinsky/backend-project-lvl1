@@ -1,7 +1,6 @@
 import * as index from '../index.js';
 
 export default () => {
-
   const questions = [];
   const questionCount = 3;
   for (let i = 0; i < questionCount; i += 1) {
