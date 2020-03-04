@@ -10,5 +10,8 @@
 ## Установка и запуск игры: "Арифметическая прогрессия"
 [![asciicast](https://asciinema.org/a/8YS1uOxmQmcbzlRlM1RZi8YUN.svg)](https://asciinema.org/a/8YS1uOxmQmcbzlRlM1RZi8YUN)
 
+## Установка и запуск игры: "Простое ли число?"
+[![asciicast](https://asciinema.org/a/vu4YqVmzWFrrQ9gXdUA45hdJN.svg)](https://asciinema.org/a/vu4YqVmzWFrrQ9gXdUA45hdJN)
+
 <a href="https://codeclimate.com/github/alexandertolchinsky/backend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/155724e7ffd61dc3c6fc/maintainability" /></a>
 ![.github/workflows/lint.yml](https://github.com/alexandertolchinsky/backend-project-lvl1/workflows/.github/workflows/runLinter.yml/badge.svg)

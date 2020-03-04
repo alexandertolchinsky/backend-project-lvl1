@@ -59,3 +59,23 @@ export const getProgression = () => {
   }
   return result;
 };
+
+export const isPrimeNumber = (number) => {
+  if (number % 2 === 0) {
+    return false;
+  }
+  if (number % 3 === 0) {
+    return false;
+  }
+  if (number % 5 === 0) {
+    return false;
+  }
+  let smallestDivisor = 1;
+  for (let i = 7; i < Math.sqrt(number); i += 1) {
+    if (number % i === 0) {
+      smallestDivisor = i;
+      break;
+    }
+  }
+  return smallestDivisor === 1;
+};
