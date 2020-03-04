@@ -1,4 +1,10 @@
 #!/usr/bin/env node
-import parityCheck from '../src/games/parity-check.js';
+import * as index from '../src/index.js';
+import getQuestions from '../src/games/parity-check.js';
 
-parityCheck();
+index.greet();
+const name = index.askName();
+console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const questions = getQuestions();
+const correctAnswerCount = index.getCorrectAnswerCount(questions);
+index.showResult(correctAnswerCount, name);
