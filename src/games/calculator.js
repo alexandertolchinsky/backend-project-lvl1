@@ -7,9 +7,10 @@ const getRandomSign = () => {
 };
 
 export default () => {
+  index.greet();
+  const name = index.askName();
   const questions = [];
-  const questionCount = 3;
-  for (let i = 0; i < questionCount; i += 1) {
+  for (let i = 0; i < index.roundCount; i += 1) {
     const firstRandomNumber = index.getRandomNumber();
     const secondRandomNumber = index.getRandomNumber();
     const sign = getRandomSign();
@@ -30,5 +31,6 @@ export default () => {
     }
     questions.push([question, String(correctAnswer)]);
   }
-  return questions;
+  const correctAnswerCount = index.getCorrectAnswerCount(questions);
+  index.showResult(correctAnswerCount, name);
 };

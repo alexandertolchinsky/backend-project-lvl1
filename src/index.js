@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 
+export const roundCount = 3;
+
 export const greet = () => {
   console.log('Welcome to the Brain Games!');
 };
@@ -8,6 +10,11 @@ export const askName = () => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   return name;
+};
+
+export const brainGames = () => {
+  greet();
+  askName();
 };
 
 export const getCorrectAnswerCount = (questions) => {
@@ -37,45 +44,3 @@ export const showResult = (correctAnswerCount, name) => {
 };
 
 export const getRandomNumber = () => Math.floor(Math.random() * 100);
-
-export const getGCD = (firstNumber, secondNumber) => {
-  let a = firstNumber;
-  let b = secondNumber;
-  while (a > 0 && b > 0) {
-    if (a > b) {
-      a %= b;
-    } else {
-      b %= a;
-    }
-  }
-  return a + b;
-};
-
-export const getProgression = () => {
-  const randomNumber = getRandomNumber();
-  const result = [randomNumber];
-  for (let i = 1; i <= 10; i += 1) {
-    result.push(randomNumber + i);
-  }
-  return result;
-};
-
-export const isPrimeNumber = (number) => {
-  if (number % 2 === 0) {
-    return false;
-  }
-  if (number % 3 === 0) {
-    return false;
-  }
-  if (number % 5 === 0) {
-    return false;
-  }
-  let smallestDivisor = 1;
-  for (let i = 7; i < Math.sqrt(number); i += 1) {
-    if (number % i === 0) {
-      smallestDivisor = i;
-      break;
-    }
-  }
-  return smallestDivisor === 1;
-};
