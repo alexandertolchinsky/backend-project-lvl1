@@ -12,26 +12,24 @@ const askName = () => {
   return name;
 };
 
-const getCorrectAnswer = (questions) => {
-  const result = [];
+const askQuestions = (questions) => {
   for (let i = 0; i < questions.length; i += 1) {
     const question = questions[i][0];
     console.log(`Question: ${question}`);
     const correctAnswer = questions[i][1];
     const answer = readlineSync.question('Your answer: ');
     if (correctAnswer === answer) {
-      result.push(correctAnswer);
       console.log('Correct!');
     } else {
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
-      break;
+      return false;
     }
   }
-  return result;
+  return true;
 };
 
-const showResult = (correctAnswerCount, name) => {
-  if (correctAnswerCount === 3) {
+const showResult = (result, name) => {
+  if (result) {
     console.log(`Congratulations, ${name}!`);
   } else {
     console.log(`Let's try again, ${name}!`);
@@ -47,8 +45,7 @@ export const runGame = (questions = []) => {
   greet();
   const name = askName();
   if (questions.toString() !== '') {
-    const correctAnswer = getCorrectAnswer(questions);
-    const correctAnswerCount = correctAnswer.length;
-    showResult(correctAnswerCount, name);
+    const result = askQuestions(questions);
+    showResult(result, name);
   }
 };
