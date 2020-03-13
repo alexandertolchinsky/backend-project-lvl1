@@ -20,15 +20,17 @@ const isPrimeNumber = (number) => {
   return smallestDivisor === 1;
 };
 
-export default () => {
-  index.greet();
-  const name = index.askName();
+const getQuestions = () => {
   const questions = [];
   for (let i = 0; i < index.roundCount; i += 1) {
     const randomNumber = index.getRandomNumber();
     const correctAnswer = isPrimeNumber(randomNumber) ? 'yes' : 'no';
     questions.push([randomNumber, correctAnswer]);
   }
-  const correctAnswerCount = index.getCorrectAnswerCount(questions);
-  index.showResult(correctAnswerCount, name);
+  return questions;
+};
+
+export default () => {
+  const questions = getQuestions();
+  index.runGame(questions);
 };

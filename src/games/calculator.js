@@ -6,16 +6,14 @@ const getRandomSign = () => {
   return signs[randomKey];
 };
 
-export default () => {
-  index.greet();
-  const name = index.askName();
+const getQuestions = () => {
   const questions = [];
   for (let i = 0; i < index.roundCount; i += 1) {
     const firstRandomNumber = index.getRandomNumber();
     const secondRandomNumber = index.getRandomNumber();
     const sign = getRandomSign();
     const question = `${firstRandomNumber} ${sign} ${secondRandomNumber}`;
-    let correctAnswer = 0;
+    let correctAnswer;
     switch (sign) {
       case '+':
         correctAnswer = firstRandomNumber + secondRandomNumber;
@@ -31,6 +29,10 @@ export default () => {
     }
     questions.push([question, String(correctAnswer)]);
   }
-  const correctAnswerCount = index.getCorrectAnswerCount(questions);
-  index.showResult(correctAnswerCount, name);
+  return questions;
+};
+
+export default () => {
+  const questions = getQuestions();
+  index.runGame(questions);
 };

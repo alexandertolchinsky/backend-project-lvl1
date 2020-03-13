@@ -13,9 +13,7 @@ const getGCD = (firstNumber, secondNumber) => {
   return a + b;
 };
 
-export default () => {
-  index.greet();
-  const name = index.askName();
+const getQuestions = () => {
   const questions = [];
   for (let i = 0; i < index.roundCount; i += 1) {
     const firstRandomNumber = index.getRandomNumber();
@@ -24,6 +22,10 @@ export default () => {
     const correctAnswer = String(getGCD(firstRandomNumber, secondRandomNumber));
     questions.push([question, correctAnswer]);
   }
-  const correctAnswerCount = index.getCorrectAnswerCount(questions);
-  index.showResult(correctAnswerCount, name);
+  return questions;
+};
+
+export default () => {
+  const questions = getQuestions();
+  index.runGame(questions);
 };
