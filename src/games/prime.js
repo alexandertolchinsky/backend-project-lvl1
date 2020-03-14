@@ -1,13 +1,16 @@
 import * as index from '../index.js';
 
 const isPrimeNumber = (number) => {
-  if (number % 2 === 0) {
+  if (number <= 1) {
     return false;
   }
-  if (number % 3 === 0) {
+  if (number % 2 === 0 && number !== 2) {
     return false;
   }
-  if (number % 5 === 0) {
+  if (number % 3 === 0 && number !== 3) {
+    return false;
+  }
+  if (number % 5 === 0 && number !== 5) {
     return false;
   }
   let smallestDivisor = 1;
