@@ -1,26 +1,15 @@
 import * as index from '../index.js';
 
 const isPrimeNumber = (number) => {
-  if (number <= 1) {
+  if (number < 2) {
     return false;
   }
-  if (number % 2 === 0 && number !== 2) {
-    return false;
-  }
-  if (number % 3 === 0 && number !== 3) {
-    return false;
-  }
-  if (number % 5 === 0 && number !== 5) {
-    return false;
-  }
-  let smallestDivisor = 1;
-  for (let i = 7; i < Math.sqrt(number); i += 1) {
+  for (let i = 2; i <= Math.sqrt(number); i += 1) {
     if (number % i === 0) {
-      smallestDivisor = i;
-      break;
+      return false;
     }
   }
-  return smallestDivisor === 1;
+  return true;
 };
 
 const getQuestions = () => {
