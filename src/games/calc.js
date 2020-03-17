@@ -1,16 +1,17 @@
-import * as index from '../index.js';
+import * as engine from '../engine.js';
+import getRandomNumber from '../utils.js';
 
 const getRandomSign = () => {
   const signs = ['+', '-', '*'];
-  const randomKey = Math.floor(Math.random() * signs.length);
+  const randomKey = getRandomNumber(0, 2);
   return signs[randomKey];
 };
 
-const getQuestions = () => {
-  const questions = [];
-  for (let i = 0; i < index.roundCount; i += 1) {
-    const firstRandomNumber = index.getRandomNumber();
-    const secondRandomNumber = index.getRandomNumber();
+const getQuestionsAndAnswers = () => {
+  const questionsAndAnswers = [];
+  for (let i = 0; i < engine.roundCount; i += 1) {
+    const firstRandomNumber = getRandomNumber();
+    const secondRandomNumber = getRandomNumber();
     const sign = getRandomSign();
     const question = `${firstRandomNumber} ${sign} ${secondRandomNumber}`;
     let correctAnswer;
@@ -27,12 +28,12 @@ const getQuestions = () => {
       default:
         break;
     }
-    questions.push([question, String(correctAnswer)]);
+    questionsAndAnswers.push([question, String(correctAnswer)]);
   }
-  return questions;
+  return questionsAndAnswers;
 };
 
 export default () => {
-  const questions = getQuestions();
-  index.runGame(questions);
+  const questionsAndAnswers = getQuestionsAndAnswers();
+  engine.runGame(questionsAndAnswers);
 };

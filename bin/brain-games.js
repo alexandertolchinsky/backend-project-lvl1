@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import * as index from '../src/index.js';
+import * as index from '../src/engine.js';
 
 index.runGame();

@@ -1,4 +1,5 @@
-import * as index from '../index.js';
+import * as engine from '../engine.js';
+import getRandomNumber from '../utils.js';
 
 const getGCD = (firstNumber, secondNumber) => {
   let a = firstNumber;
@@ -13,19 +14,19 @@ const getGCD = (firstNumber, secondNumber) => {
   return a + b;
 };
 
-const getQuestions = () => {
-  const questions = [];
-  for (let i = 0; i < index.roundCount; i += 1) {
-    const firstRandomNumber = index.getRandomNumber();
-    const secondRandomNumber = index.getRandomNumber();
+const getQuestionsAndAnswers = () => {
+  const questionsAndAnswers = [];
+  for (let i = 0; i < engine.roundCount; i += 1) {
+    const firstRandomNumber = getRandomNumber();
+    const secondRandomNumber = getRandomNumber();
     const question = `${firstRandomNumber} ${secondRandomNumber}`;
     const correctAnswer = String(getGCD(firstRandomNumber, secondRandomNumber));
-    questions.push([question, correctAnswer]);
+    questionsAndAnswers.push([question, correctAnswer]);
   }
-  return questions;
+  return questionsAndAnswers;
 };
 
 export default () => {
-  const questions = getQuestions();
-  index.runGame(questions);
+  const questionsAndAnswers = getQuestionsAndAnswers();
+  engine.runGame(questionsAndAnswers);
 };
