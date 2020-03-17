@@ -2,7 +2,15 @@
   "name": "backend-project-lvl",
   "version": "1.0.0",
   "description": "A set of mini-games launched from the console",
-  "keywords": ["mini-games","brain-calc", "brain-even", "brain-games", "brain-gcd", "brain-prime", "brain-progression"],
+  "keywords": [
+    "mini-games",
+    "brain-calc",
+    "brain-even",
+    "brain-games",
+    "brain-gcd",
+    "brain-prime",
+    "brain-progression"
+  ],
   "main": "src/engine.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
