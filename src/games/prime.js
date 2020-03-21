@@ -15,7 +15,7 @@ const isPrime = (number) => {
 
 const getQuestionsAndAnswers = () => {
   const questionsAndAnswers = [];
-  for (let i = 0; i < engine.roundCount; i += 1) {
+  for (let i = 0; i < engine.roundsCount; i += 1) {
     const randomNumber = getRandomNumber();
     const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
     questionsAndAnswers.push([randomNumber, correctAnswer]);
@@ -25,5 +25,6 @@ const getQuestionsAndAnswers = () => {
 
 export default () => {
   const questionsAndAnswers = getQuestionsAndAnswers();
-  engine.runGame(questionsAndAnswers);
+  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  engine.playGame(questionsAndAnswers, description);
 };

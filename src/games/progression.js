@@ -12,11 +12,11 @@ const getProgression = (start, step) => {
 
 const getQuestionsAndAnswers = () => {
   const questionsAndAnswers = [];
-  for (let i = 0; i < engine.roundCount; i += 1) {
+  for (let i = 0; i < engine.roundsCount; i += 1) {
     const start = getRandomNumber();
     const step = getRandomNumber();
     const progression = getProgression(start, step);
-    const randomKey = Math.floor(Math.random() * progression.length);
+    const randomKey = getRandomNumber(0, progression.length - 1);
     const correctAnswer = progression[randomKey];
     progression[randomKey] = '..';
     questionsAndAnswers.push([progression.join(' '), String(correctAnswer)]);
@@ -26,5 +26,6 @@ const getQuestionsAndAnswers = () => {
 
 export default () => {
   const questionsAndAnswers = getQuestionsAndAnswers();
-  engine.runGame(questionsAndAnswers);
+  const description = 'What number is missing in the progression?';
+  engine.playGame(questionsAndAnswers, description);
 };

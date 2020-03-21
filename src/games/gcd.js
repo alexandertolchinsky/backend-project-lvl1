@@ -16,7 +16,7 @@ const getGCD = (firstNumber, secondNumber) => {
 
 const getQuestionsAndAnswers = () => {
   const questionsAndAnswers = [];
-  for (let i = 0; i < engine.roundCount; i += 1) {
+  for (let i = 0; i < engine.roundsCount; i += 1) {
     const firstRandomNumber = getRandomNumber();
     const secondRandomNumber = getRandomNumber();
     const question = `${firstRandomNumber} ${secondRandomNumber}`;
@@ -28,5 +28,6 @@ const getQuestionsAndAnswers = () => {
 
 export default () => {
   const questionsAndAnswers = getQuestionsAndAnswers();
-  engine.runGame(questionsAndAnswers);
+  const description = 'Find the greatest common divisor of given numbers.';
+  engine.playGame(questionsAndAnswers, description);
 };

@@ -9,7 +9,7 @@ const getRandomSign = () => {
 
 const getQuestionsAndAnswers = () => {
   const questionsAndAnswers = [];
-  for (let i = 0; i < engine.roundCount; i += 1) {
+  for (let i = 0; i < engine.roundsCount; i += 1) {
     const firstRandomNumber = getRandomNumber();
     const secondRandomNumber = getRandomNumber();
     const sign = getRandomSign();
@@ -35,5 +35,6 @@ const getQuestionsAndAnswers = () => {
 
 export default () => {
   const questionsAndAnswers = getQuestionsAndAnswers();
-  engine.runGame(questionsAndAnswers);
+  const description = 'What is the result of the expression?';
+  engine.playGame(questionsAndAnswers, description);
 };
