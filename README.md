@@ -3,7 +3,9 @@
 # A set of mini-games "Mind Games"
 ## About The Project
 This is a training project in which I implemented a set of mini-games launched from the console.
-Each game consists of 3 rounds. The player wins if all the questions were answered correctly. The set of mini-games includes the following games:
+Each game consists of 3 rounds. The player wins if all the questions were answered correctly. 
+
+The set of mini-games includes the following games:
 1) Check for parity (the player must answer, is the even number?)
 2) Calculator (the player must perform arithmetic on two numbers)
 3) GCD (the player must write the greatest common divisor of two numbers)
@@ -57,6 +59,7 @@ brain-prime
 [![asciicast](https://asciinema.org/a/9daRmODerwv7Mv9KJrth3opSG.svg)](https://asciinema.org/a/9daRmODerwv7Mv9KJrth3opSG)
 ## Contact
 Alexander Tolchinsky - alexander.tolchinsky@gmail.com
+
 Project Link: [https://github.com/alexandertolchinsky/backend-project-lvl1](https://github.com/alexandertolchinsky/backend-project-lvl1)
 ## Acknowledgements
 * [Lodash](https://lodash.com)
