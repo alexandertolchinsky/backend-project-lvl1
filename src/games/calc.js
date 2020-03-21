@@ -3,7 +3,7 @@ import getRandomNumber from '../utils.js';
 
 const getRandomSign = () => {
   const signs = ['+', '-', '*'];
-  const randomKey = getRandomNumber(0, 2);
+  const randomKey = getRandomNumber(0, signs.length - 1);
   return signs[randomKey];
 };
 
@@ -17,18 +17,18 @@ const getQuestionsAndAnswers = () => {
     let correctAnswer;
     switch (sign) {
       case '+':
-        correctAnswer = firstRandomNumber + secondRandomNumber;
+        correctAnswer = String(firstRandomNumber + secondRandomNumber);
         break;
       case '-':
-        correctAnswer = firstRandomNumber - secondRandomNumber;
+        correctAnswer = String(firstRandomNumber - secondRandomNumber);
         break;
       case '*':
-        correctAnswer = firstRandomNumber * secondRandomNumber;
+        correctAnswer = String(firstRandomNumber * secondRandomNumber);
         break;
       default:
         break;
     }
-    questionsAndAnswers.push([question, String(correctAnswer)]);
+    questionsAndAnswers.push([question, correctAnswer]);
   }
   return questionsAndAnswers;
 };

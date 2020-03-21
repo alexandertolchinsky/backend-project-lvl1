@@ -10,6 +10,12 @@ const getProgression = (start, step) => {
   return result;
 };
 
+const getQuestion = (progression, randomKey) => {
+  const question = progression;
+  question[randomKey] = '..';
+  return question.join(' ');
+};
+
 const getQuestionsAndAnswers = () => {
   const questionsAndAnswers = [];
   for (let i = 0; i < engine.roundsCount; i += 1) {
@@ -17,9 +23,9 @@ const getQuestionsAndAnswers = () => {
     const step = getRandomNumber();
     const progression = getProgression(start, step);
     const randomKey = getRandomNumber(0, progression.length - 1);
-    const correctAnswer = progression[randomKey];
-    progression[randomKey] = '..';
-    questionsAndAnswers.push([progression.join(' '), String(correctAnswer)]);
+    const correctAnswer = String(progression[randomKey]);
+    const question = getQuestion(progression, randomKey);
+    questionsAndAnswers.push([question, correctAnswer]);
   }
   return questionsAndAnswers;
 };

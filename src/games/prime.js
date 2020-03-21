@@ -16,9 +16,9 @@ const isPrime = (number) => {
 const getQuestionsAndAnswers = () => {
   const questionsAndAnswers = [];
   for (let i = 0; i < engine.roundsCount; i += 1) {
-    const randomNumber = getRandomNumber();
-    const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
-    questionsAndAnswers.push([randomNumber, correctAnswer]);
+    const question = getRandomNumber();
+    const correctAnswer = isPrime(question) ? 'yes' : 'no';
+    questionsAndAnswers.push([question, correctAnswer]);
   }
   return questionsAndAnswers;
 };
