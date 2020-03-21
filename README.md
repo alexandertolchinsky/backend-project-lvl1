@@ -17,7 +17,7 @@ The set of mini-games includes the following games:
 ```sh 
 git clone https://github.com/alexandertolchinsky/backend-project-lvl1.git
 ```
-2. Install package localy
+2. Install package locally
 ```sh
 npm link
 ```
