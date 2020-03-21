@@ -25,6 +25,7 @@ npm link
 ```
 
 ##How to run
+
 mini-game "Check for parity" 
 ```sh 
 brain-even
