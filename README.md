@@ -1,7 +1,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/155724e7ffd61dc3c6fc/maintainability)](https://codeclimate.com/github/alexandertolchinsky/backend-project-lvl1/maintainability)
 ![.github/workflows/lint.yml](https://github.com/alexandertolchinsky/backend-project-lvl1/workflows/.github/workflows/runLinter.yml/badge.svg)
 
-#A set of mini-games "Mind Games"
+# A set of mini-games "Mind Games"
 
 ## About The Project
 
@@ -24,7 +24,7 @@ git clone https://github.com/alexandertolchinsky/backend-project-lvl1.git
 npm link
 ```
 
-##How to run
+## How to run
 
 mini-game "Check for parity" 
 ```sh 
