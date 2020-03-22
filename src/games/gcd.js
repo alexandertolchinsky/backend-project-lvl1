@@ -20,8 +20,8 @@ const getQuestionsAndAnswers = () => {
     const firstRandomNumber = getRandomNumber();
     const secondRandomNumber = getRandomNumber();
     const question = `${firstRandomNumber} ${secondRandomNumber}`;
-    const correctAnswer = String(getGCD(firstRandomNumber, secondRandomNumber));
-    questionsAndAnswers.push([question, correctAnswer]);
+    const correctAnswer = getGCD(firstRandomNumber, secondRandomNumber);
+    questionsAndAnswers.push([question, String(correctAnswer)]);
   }
   return questionsAndAnswers;
 };

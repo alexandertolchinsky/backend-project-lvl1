@@ -17,18 +17,18 @@ const getQuestionsAndAnswers = () => {
     let correctAnswer;
     switch (sign) {
       case '+':
-        correctAnswer = String(firstRandomNumber + secondRandomNumber);
+        correctAnswer = firstRandomNumber + secondRandomNumber;
         break;
       case '-':
-        correctAnswer = String(firstRandomNumber - secondRandomNumber);
+        correctAnswer = firstRandomNumber - secondRandomNumber;
         break;
       case '*':
-        correctAnswer = String(firstRandomNumber * secondRandomNumber);
+        correctAnswer = firstRandomNumber * secondRandomNumber;
         break;
       default:
         break;
     }
-    questionsAndAnswers.push([question, correctAnswer]);
+    questionsAndAnswers.push([question, String(correctAnswer)]);
   }
   return questionsAndAnswers;
 };

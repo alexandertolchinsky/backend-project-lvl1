@@ -23,9 +23,9 @@ const getQuestionsAndAnswers = () => {
     const step = getRandomNumber();
     const progression = getProgression(start, step);
     const randomKey = getRandomNumber(0, progression.length - 1);
-    const correctAnswer = String(progression[randomKey]);
+    const correctAnswer = progression[randomKey];
     const question = getQuestion(progression, randomKey);
-    questionsAndAnswers.push([question, correctAnswer]);
+    questionsAndAnswers.push([question, String(correctAnswer)]);
   }
   return questionsAndAnswers;
 };
