@@ -1,10 +1,12 @@
 import * as engine from '../engine.js';
 import getRandomNumber from '../utils.js';
 
-const getProgression = (start, step) => {
+const progressionLength = 10;
+const description = 'What number is missing in the progression?';
+
+const getProgression = (start, step, length) => {
   const result = [];
-  const progressionLength = 10;
-  for (let i = 0; i < progressionLength; i += 1) {
+  for (let i = 0; i < length; i += 1) {
     result.push(start + (step * i));
   }
   return result;
@@ -21,7 +23,7 @@ const getQuestionsAndAnswers = () => {
   for (let i = 0; i < engine.roundsCount; i += 1) {
     const start = getRandomNumber();
     const step = getRandomNumber();
-    const progression = getProgression(start, step);
+    const progression = getProgression(start, step, progressionLength);
     const randomKey = getRandomNumber(0, progression.length - 1);
     const correctAnswer = progression[randomKey];
     const question = getQuestion(progression, randomKey);
@@ -32,6 +34,5 @@ const getQuestionsAndAnswers = () => {
 
 export default () => {
   const questionsAndAnswers = getQuestionsAndAnswers();
-  const description = 'What number is missing in the progression?';
   engine.playGame(questionsAndAnswers, description);
 };

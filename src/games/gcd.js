@@ -1,6 +1,8 @@
 import * as engine from '../engine.js';
 import getRandomNumber from '../utils.js';
 
+const description = 'Find the greatest common divisor of given numbers.';
+
 const getGCD = (firstNumber, secondNumber) => {
   let a = firstNumber;
   let b = secondNumber;
@@ -28,6 +30,5 @@ const getQuestionsAndAnswers = () => {
 
 export default () => {
   const questionsAndAnswers = getQuestionsAndAnswers();
-  const description = 'Find the greatest common divisor of given numbers.';
   engine.playGame(questionsAndAnswers, description);
 };

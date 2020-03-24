@@ -1,6 +1,8 @@
 import * as engine from '../engine.js';
 import getRandomNumber from '../utils.js';
 
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 const isPrime = (number) => {
   if (number < 2) {
     return false;
@@ -25,6 +27,5 @@ const getQuestionsAndAnswers = () => {
 
 export default () => {
   const questionsAndAnswers = getQuestionsAndAnswers();
-  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   engine.playGame(questionsAndAnswers, description);
 };

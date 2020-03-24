@@ -1,6 +1,8 @@
 import * as engine from '../engine.js';
 import getRandomNumber from '../utils.js';
 
+const description = 'What is the result of the expression?';
+
 const getRandomSign = () => {
   const signs = ['+', '-', '*'];
   const randomKey = getRandomNumber(0, signs.length - 1);
@@ -35,6 +37,5 @@ const getQuestionsAndAnswers = () => {
 
 export default () => {
   const questionsAndAnswers = getQuestionsAndAnswers();
-  const description = 'What is the result of the expression?';
   engine.playGame(questionsAndAnswers, description);
 };

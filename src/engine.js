@@ -12,13 +12,12 @@ export const playGame = (questionsAndAnswers = [], description) => {
     for (const [question, correctAnswer] of questionsAndAnswers) {
       console.log(`Question: ${question}`);
       const answer = readlineSync.question('Your answer: ');
-      if (correctAnswer === answer) {
-        console.log('Correct!');
-      } else {
+      if (correctAnswer !== answer) {
         console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
         console.log(`Let's try again, ${name}!`);
         return;
       }
+      console.log('Correct!');
     }
     console.log(`Congratulations, ${name}!`);
   }
