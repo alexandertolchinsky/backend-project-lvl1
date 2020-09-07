@@ -62,7 +62,6 @@ Alexander Tolchinsky - alexander.tolchinsky@gmail.com
 
 Project Link: [https://github.com/alexandertolchinsky/backend-project-lvl1](https://github.com/alexandertolchinsky/backend-project-lvl1)
 ## Acknowledgements
-* [Lodash](https://lodash.com)
 * [readlineSync](https://github.com/anseki/readline-sync)
 
 
